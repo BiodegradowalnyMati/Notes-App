@@ -1,9 +1,10 @@
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Notatka
 from .forms import NotatkaForm
 from django.db import models
 # Create your views here.
-def lista_notatek(request):
+def lista_notatek(request,tag_slug=None):
     notatki = Notatka.objects.all().order_by(
         models.Case(
             models.When(poziom_waznosci='bardzo', then=1),
@@ -12,7 +13,20 @@ def lista_notatek(request):
             output_field=models.IntegerField(),
         )
     )
-    return render(request, 'notatki/lista_notatek.html', {'notatki': notatki})
+    if tag_slug:
+        notatki = Notatka.objects.filter( status='data_publikacji')
+
+    paginator = Paginator(notatki, per_page=3)
+    strona = request.GET.get('strona')
+
+    try:
+        notatki = paginator.strona(strona)
+    except PageNotAnInteger:
+        notatki = paginator.strona(1)
+    except EmptyPage:
+        notatki = paginator.strona(paginator.num_pages)
+
+    return render(request,'notatki/lista_notatek.html',{'notatki':notatki ,'strona':strona,})
 
 def dodaj_notatke(request):
     if request.method == 'POST':
