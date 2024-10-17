@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ notatka.tytul }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'notatki/style.css' %}">
+</head>
+<body>
+    <h1>{{ notatka.tytul }}</h1>
+    <p><strong>Autor:</strong> {{ notatka.autor }}</p>
+    <p><strong>Data publikacji:</strong> {{ notatka.data_publikacji }}</p>
+    <p>{{ notatka.tresc }}</p>
+
+    <a href="{% url 'lista_notatek' %}">Powrót do listy notatek</a>
+</body>
+</html>

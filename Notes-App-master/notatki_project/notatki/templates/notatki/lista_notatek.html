@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Lista Notatek</title>
+    <link rel="stylesheet" href="{% static 'notatki/style.css' %}">
+</head>
+<body>
+    <h1>Lista Notatek</h1>
+    <a href="{% url 'dodaj_notatke' %}">Dodaj Notatkę</a>
+    <ul>
+        {% for notatka in notatki %}
+            <li>
+                <span class="waznosci {{ notatka.poziom_waznosci }}"></span>
+                <a href="{% url 'szczegoly_notatki' notatka.pk %}">{{ notatka.tytul }}</a> Dodano przez "{{ notatka.autor }}" Data dodania {{ notatka.data_publikacji }}
+                <a href="{% url 'edytuj_notatke' notatka.pk %}">Edytuj</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
