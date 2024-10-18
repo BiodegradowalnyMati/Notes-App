@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>Lista Notatek</title>
+    <title>Notatnik</title>
     <link rel="stylesheet" href="{% static 'notatki/style.css' %}">
 </head>
 <body>
-    <h1>Lista Notatek</h1>
+    <h1>Notatnik</h1>
     <a href="{% url 'dodaj_notatke' %}">Dodaj Notatkę</a>
     <ul>
-        {% for notatka in notatki %}
+        {% for notatka in strona %}
             <li>
                 <span class="waznosci {{ notatka.poziom_waznosci }}"></span>
                 <a href="{% url 'szczegoly_notatki' notatka.pk %}">{{ notatka.tytul }}</a> Dodano przez "{{ notatka.autor }}" Data dodania {{ notatka.data_publikacji }}
@@ -18,5 +18,16 @@
             </li>
         {% endfor %}
     </ul>
+
+
+    {% if strona.has_previous %}
+            <a href="?strona={{ strona.previous_page_number }}">Poprzednia</a>
+    {% endif %}
+
+     Strona {{ strona.number }} z {{ strona.paginator.num_pages }}
+
+    {% if strona.has_next %}
+        <a href="?strona={{ strona.next_page_number }}">Następna</a>
+    {% endif %}
 </body>
 </html>

@@ -14,20 +14,20 @@ def lista_notatek(request,tag_slug=None):
         )
     )
     if tag_slug:
-        notatki = Notatka.objects.filter( status='data_publikacji')
+        notatki = Notatka.objects.filter( status='data_publikacji',tag__slug=tag_slug)
 
-    paginator = Paginator(notatki, per_page=3)
+    paginator = Paginator(notatki, per_page=8)
     strona = request.GET.get('strona')
 
     try:
-        notatki = paginator.page(strona)
+        notatki_strona = paginator.page(strona)
     except PageNotAnInteger:
-        notatki = paginator.page(1)
+        notatki_strona = paginator.page(1)
     except EmptyPage:
-        notatki = paginator.page(paginator.num_pages)
+        notatki_strona = paginator.page(paginator.num_pages)
 
 
-    return render(request,'notatki/lista_notatek.html',{'notatki':notatki ,'strona':strona,})
+    return render(request,'notatki/lista_notatek.html',{'strona':notatki_strona,})
 
 def dodaj_notatke(request):
     if request.method == 'POST':
