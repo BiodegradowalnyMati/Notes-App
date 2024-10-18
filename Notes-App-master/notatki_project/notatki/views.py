@@ -20,11 +20,12 @@ def lista_notatek(request,tag_slug=None):
     strona = request.GET.get('strona')
 
     try:
-        notatki = paginator.strona(strona)
+        notatki = paginator.page(strona)
     except PageNotAnInteger:
-        notatki = paginator.strona(1)
+        notatki = paginator.page(1)
     except EmptyPage:
-        notatki = paginator.strona(paginator.num_pages)
+        notatki = paginator.page(paginator.num_pages)
+
 
     return render(request,'notatki/lista_notatek.html',{'notatki':notatki ,'strona':strona,})
 
