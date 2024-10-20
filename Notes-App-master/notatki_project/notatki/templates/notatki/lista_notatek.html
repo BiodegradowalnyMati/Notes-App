@@ -1,23 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    {% load static %}
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    <title>Notatnik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css " >
     <link rel="stylesheet" href="{% static 'notatki/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Notatnik</title>
 </head>
 <body>
     <h1>Notatnik</h1>
-    <a href="{% url 'dodaj_notatke' %}">Dodaj Notatkę</a>
+   <a href="{% url 'dodaj_notatke' %}" class="dodawanie-link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-clipboard-plus" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7"/>
+        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+    </svg>
+    <span class="hover-dodaj">dodaj notatke</span>
+</a>
+
     <ul>
         {% for notatka in strona %}
             <li>
                 <span class="waznosci {{ notatka.poziom_waznosci }}"></span>
                 <a href="{% url 'szczegoly_notatki' notatka.pk %}">{{ notatka.tytul }}</a> Dodano przez "{{ notatka.autor }}" Data dodania {{ notatka.data_publikacji }}
-                <a href="{% url 'edytuj_notatke' notatka.pk %}">Edytuj</a>
+                <a href="{% url 'edytuj_notatke' notatka.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
             </li>
         {% endfor %}
     </ul>

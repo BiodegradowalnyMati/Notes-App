@@ -69,3 +69,26 @@ form {
     background-color: red;
 }
 
+.dodawanie-link{
+    position: relative;
+    text-decoration: none;
+}
+
+.hover-dodaj {
+    display: none;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f8f9fa;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dodawanie-link:hover .hover-dodaj {
+    display: block;
+}
+
+
