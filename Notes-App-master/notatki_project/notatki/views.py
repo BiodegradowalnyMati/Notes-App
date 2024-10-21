@@ -33,6 +33,9 @@ def dodaj_notatke(request):
     if request.method == 'POST':
         form = NotatkaForm(request.POST)
         if form.is_valid():
+            notatka = form.save(commit=False)
+            notatka.autor = request.user
+            notatka.save()
             form.save()
             return redirect('lista_notatek')
     else:

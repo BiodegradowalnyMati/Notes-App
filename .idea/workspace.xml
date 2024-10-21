@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977ebd1d-6c38-4e45-9269-bdc305ba006f" name="Changes" comment="paginacja(dziala)">
-      <change beforePath="$PROJECT_DIR$/.idea/Notes-App-master (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Notes-App-master (1).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes-App-master/notatki_project/notatki/static/notatki/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Notes-App-master/notatki_project/notatki/static/notatki/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes-App-master/notatki_project/notatki/templates/notatki/lista_notatek.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notes-App-master/notatki_project/notatki/templates/notatki/lista_notatek.html" afterDir="false" />
-    </list>
+    <list default="true" id="977ebd1d-6c38-4e45-9269-bdc305ba006f" name="Changes" comment="bootstrap zrobiony(mozna cos jeszcze dorobic)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +76,7 @@
       <workItem from="1728629732306" duration="2000" />
       <workItem from="1729158212125" duration="2230000" />
       <workItem from="1729234505956" duration="3774000" />
-      <workItem from="1729421881901" duration="3748000" />
+      <workItem from="1729421881901" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="paginacja(nie dokonczona)">
       <option name="closed" value="true" />
@@ -108,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729238102515</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bootstrap zrobiony(mozna cos jeszcze dorobic)">
+      <option name="closed" value="true" />
+      <created>1729427762995</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729427762995</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +130,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="paginacja(nie dokonczona)" />
     <MESSAGE value="paginacja(dziala)" />
-    <option name="LAST_COMMIT_MESSAGE" value="paginacja(dziala)" />
+    <MESSAGE value="bootstrap zrobiony(mozna cos jeszcze dorobic)" />
+    <option name="LAST_COMMIT_MESSAGE" value="bootstrap zrobiony(mozna cos jeszcze dorobic)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Notes_App$views.coverage" NAME="views Coverage Results" MODIFIED="1729234596718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Notes-App-master/notatki_project/notatki" />

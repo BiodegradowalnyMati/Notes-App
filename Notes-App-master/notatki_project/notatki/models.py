@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 from django.db import models
@@ -14,7 +15,7 @@ class Notatka(models.Model):
 
     tytul = models.CharField(max_length=200)
     tresc = models.TextField()
-    autor = models.CharField(max_length=100)
+    autor = models.ForeignKey(User,on_delete=models.CASCADE)
     data_publikacji = models.DateTimeField(default=timezone.now)
     poziom_waznosci = models.CharField(max_length=10, choices=POZIOM_WAZNOSCI, default='malo')
 
